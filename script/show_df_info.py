@@ -9,7 +9,7 @@ class Df_Info:
         print(f"Data Frame contain {self.df.shape[0]} rows and {self.df.shape[1]} columns")
 
     def detailed_info(self):
-        print(self.df.info.head(20))
+        print(self.df.info(verbose=False))
 
     def skewness(self):
         '''
