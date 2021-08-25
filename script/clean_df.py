@@ -107,6 +107,6 @@ class Df_clean:
 
     def save_clean(self):
       try:
-        self.df.to_csv('../data/clean_breast_cancer.csv', index=False)
+        self.df.to_csv('../data/clean_data.csv', index=False)
       except:
         print('Log: Error while Saving File')
