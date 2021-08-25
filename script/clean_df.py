@@ -1,5 +1,5 @@
 import pandas as pd
-import num as np
+import numpy as np
 
 class Df_clean:
 
