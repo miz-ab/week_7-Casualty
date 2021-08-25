@@ -8,7 +8,3 @@ def read_csv(file_name):
     return df
   except:
     print("Log:-> File Not Found")
-
-  
-def show_info(df):
-    print(f"Data Frame contain {df.shape[0]} rows and {df.shape[1]} columns")
