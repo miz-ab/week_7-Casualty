@@ -6,6 +6,8 @@ from causalnex.structure import StructureModel
 from IPython.display import Image
 from causalnex.plots import plot_structure, NODE_STYLE, EDGE_STYLE
 
+from causalnex.structure.notears import from_pandas
+
 def plot_histogram(df:pd.DataFrame, column:str, color:str)->None:
     plt.figure(figsize=(9, 7))
     sns.displot(data=df, x=column, color=color, kde=True, height=7, aspect=2)
@@ -35,7 +37,34 @@ def plot_bar(df:pd.DataFrame, x_col:str, y_col:str, title:str, xlabel:str, ylabe
     plt.xlabel(xlabel, fontsize=16)
     plt.ylabel(ylabel, fontsize=16)
     plt.show()
+
 def plot_structure_1(structure_model):
+    viz = plot_structure(
+    structure_model,
+    graph_attributes={"scale": "0.5"},
+    all_node_attributes=NODE_STYLE.WEAK,
+    all_edge_attributes=EDGE_STYLE.WEAK)
+    return viz
+
+def plot_structure_2(structure_model):
+    viz = plot_structure(
+    structure_model,
+    graph_attributes={"scale": "0.5"},
+    all_node_attributes=NODE_STYLE.WEAK,
+    all_edge_attributes=EDGE_STYLE.WEAK)
+    return viz
+
+def plot_structure_3(structure_model):
+    structure_model.remove_edges_below_threshold(0.4)
+    viz = plot_structure(
+    structure_model,
+    graph_attributes={"scale": "0.8"},
+    all_node_attributes=NODE_STYLE.WEAK,
+    all_edge_attributes=EDGE_STYLE.WEAK)
+    return viz
+
+def plot_structure(structure_model,df,col1:str, col2:str):
+    structure_model = from_pandas(df, tabu_edges=[(col1,col2)], w_threshold=0.8)
     viz = plot_structure(
     structure_model,
     graph_attributes={"scale": "0.5"},
