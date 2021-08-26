@@ -63,7 +63,7 @@ def plot_structure_3(structure_model):
     all_edge_attributes=EDGE_STYLE.WEAK)
     return viz
 
-def plot_structure(structure_model,df,col1:str, col2:str):
+def plot_structure_4(structure_model,df,col1:str, col2:str):
     structure_model = from_pandas(df, tabu_edges=[(col1,col2)], w_threshold=0.8)
     viz = plot_structure(
     structure_model,
