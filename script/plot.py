@@ -41,7 +41,7 @@ def plot_bar(df:pd.DataFrame, x_col:str, y_col:str, title:str, xlabel:str, ylabe
 def plot_structure_1(structure_model):
     viz = plot_structure(
     structure_model,
-    graph_attributes={"scale": "0.5"},
+    graph_attributes={"scale": "2.0", 'size': 2.5},
     all_node_attributes=NODE_STYLE.WEAK,
     all_edge_attributes=EDGE_STYLE.WEAK)
     return viz
