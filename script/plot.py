@@ -48,15 +48,6 @@ def plot_structure_1(structure_model):
 
 
 
-def plot_structure_3(structure_model):
-    structure_model.remove_edges_below_threshold(0.4)
-    viz = plot_structure(
-    structure_model,
-    graph_attributes={"scale": "0.8"},
-    all_node_attributes=NODE_STYLE.WEAK,
-    all_edge_attributes=EDGE_STYLE.WEAK)
-    return viz
-
 def plot_structure_4(structure_model,df,col1:str, col2:str):
     structure_model = from_pandas(df, tabu_edges=[(col1,col2)], w_threshold=0.8)
     viz = plot_structure(
