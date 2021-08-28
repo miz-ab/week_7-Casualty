@@ -46,13 +46,7 @@ def plot_structure_1(structure_model):
     all_edge_attributes=EDGE_STYLE.WEAK)
     return viz
 
-def plot_structure_2(structure_model):
-    viz = plot_structure(
-    structure_model,
-    graph_attributes={"scale": "0.5"},
-    all_node_attributes=NODE_STYLE.WEAK,
-    all_edge_attributes=EDGE_STYLE.WEAK)
-    return viz
+
 
 def plot_structure_3(structure_model):
     structure_model.remove_edges_below_threshold(0.4)
